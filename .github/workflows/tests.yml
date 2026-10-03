@@ -21,6 +21,14 @@ jobs:
           --health-timeout 5s
           --health-retries 5
 
+    env:
+      MONGODB_URI: mongodb://127.0.0.1:27017/gestao-de-alunos-test
+      PROTOCOL: http
+      HOST: localhost
+      PORT: 3000
+      API_PATH: /api
+      REQUEST_TIMEOUT: 10000
+
     steps:
       - name: Checkout do código
         uses: actions/checkout@v4
@@ -34,12 +42,11 @@ jobs:
       - name: Instalar dependências
         run: npm ci
 
+      - name: Subir API
+        run: npm start &
+
+      - name: Aguardar API ficar disponível
+        run: npx wait-on http://localhost:3000
+
       - name: Executar testes
         run: npm test
-        env:
-          MONGODB_URI: mongodb://127.0.0.1:27017/gestao-de-alunos-test
-          PROTOCOL: http
-          HOST: localhost
-          PORT: 3000
-          API_PATH: /api
-          REQUEST_TIMEOUT: 10000
