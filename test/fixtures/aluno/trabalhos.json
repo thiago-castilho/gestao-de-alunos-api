@@ -1,0 +1,22 @@
+{
+  "usuario_valido": {
+    "alunoId": "aluno-ana-souza",
+    "login": {
+      "email": "ana.souza@example.com",
+      "senha": "123456"
+    },
+    "disciplinaId": "disciplina-matematica",
+    "titulo": "Lista de Exercícios 1",
+    "descricao": "Resolução dos exercícios de 20 a 45 do capítulo 7."
+  },
+  "usuario_nao_matriculado_na_disciplina": {
+    "alunoId": "aluno-carla-mendes",
+    "login": {
+      "email": "carla.mendes@example.com",
+      "senha": "123456"
+    },
+    "disciplinaId": "disciplina-historia",
+    "titulo": "Lista de Exercícios 1",
+    "descricao": "Resolução dos exercícios de 20 a 45 do capítulo 7."
+  }
+}
