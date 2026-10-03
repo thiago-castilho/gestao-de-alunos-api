@@ -39,6 +39,7 @@ describe('POST /api/alunos/{alunoId}/trabalhos', () => {
     const { alunoId, email, senha, ...trabalho } = { ...trabalhos.usuario_valido };
     const resposta = await registrarTrabalho(null, alunoId, trabalho);
     expect(resposta.status).to.be.equal(401);
+    expect(resposta.body.error).to.be.equal('Token de autenticação inválido ou expirado.');
   });
 
   it('deve retornar erro 400 ao tentar registrar trabalho com dados inválidos', async () => {
@@ -46,6 +47,7 @@ describe('POST /api/alunos/{alunoId}/trabalhos', () => {
     const dadosSemIdDisciplina = { ...trabalho, disciplinaId: undefined };
     const resposta = await registrarTrabalho(token, alunoId, dadosSemIdDisciplina);
     expect(resposta.status).to.be.equal(400);
+    expect(resposta.body.error).to.be.equal('Os campos "disciplinaId" e "titulo" são obrigatórios.');
   });
 
   it('deve retornar erro 403 quando o aluno autenticado não for o dono do recurso nem administrador', async () => {
