@@ -38,3 +38,8 @@ jobs:
         run: npm test
         env:
           MONGODB_URI: mongodb://127.0.0.1:27017/gestao-de-alunos-test
+          PROTOCOL: http
+          HOST: localhost
+          PORT: 3000
+          API_PATH: /api
+          REQUEST_TIMEOUT: 10000

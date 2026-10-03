@@ -1,0 +1,17 @@
+{
+  "admin": {
+    "id": "admin-principal",
+    "nome": "Administrador do Sistema",
+    "email": "admin@escola.com",
+    "role": "admin",
+    "senha": "admin123"
+  },
+  "aluno": {
+    "id": "aluno-ana-souza",
+    "matricula": "2024001",
+    "nome": "Ana Souza",
+    "email": "ana.souza@example.com",
+    "role": "aluno",
+    "senha": "123456"
+  }
+}
